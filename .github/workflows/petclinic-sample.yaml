@@ -81,7 +81,7 @@ jobs:
   ## and pushes it to an image registry.
   ## It outputs the image tag and image URL for the next step to use when deploying to the OpenShift cluster.
   build-push-image:
-    name: Build and Push to Quay
+    name: Build and Push to Docker
     runs-on: ubuntu-20.04
     needs: compile
     outputs:
@@ -112,7 +112,7 @@ jobs:
           port: ${{ env.CONTAINER_PORT }}
 
       # Push the built image to our image registry so it can be pulled into the OpenShift cluster.
-      - name: Push to Quay
+      - name: Push to Docker
         id: push-to-quay
         uses: redhat-actions/push-to-registry@v2
         with:
@@ -143,7 +143,7 @@ jobs:
         uses: redhat-actions/oc-login@v1
         with:
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-          openshift_token: ${{ secrets.TIM_OPENSHIFT_TOKEN }}
+          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           # openshift_username:
           # openshift_password:
           insecure_skip_tls_verify: true
