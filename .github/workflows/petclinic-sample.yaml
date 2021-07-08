@@ -2,9 +2,9 @@ name: OpenShift Pet Clinic Workflow
 on: [ push, workflow_dispatch ]
 
 env:
-  REGISTRY_USER: tetchell
-  IMAGE_REGISTRY: quay.io
-  TEST_NAMESPACE: tetchell-code
+  REGISTRY_USER: adelavv
+  IMAGE_REGISTRY: docker.io
+  ##TEST_NAMESPACE: tetchell-code
   APP_NAME: petclinic
   APP_PORT: 8080
   TEAR_DOWN: false
