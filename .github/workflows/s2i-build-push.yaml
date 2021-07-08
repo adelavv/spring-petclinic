@@ -5,8 +5,8 @@
 name: S2I build and push
 on: [push, workflow_dispatch, pull_request]
 env:
-  IMAGE_REGISTRY: quay.io
-  REGISTRY_USER: tetchell
+  IMAGE_REGISTRY: docker.io
+  REGISTRY_USER: adelavv
   APP_NAME: petclinic
   IMAGE_TAGS: latest
 
