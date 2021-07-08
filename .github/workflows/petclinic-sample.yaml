@@ -142,7 +142,7 @@ jobs:
       - name: OpenShift login
         uses: redhat-actions/oc-login@v1
         with:
-          openshift_server_url: ${{ secrets.OPENSHIFT_SANDBOX_URL }}
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
           openshift_token: ${{ secrets.TIM_OPENSHIFT_TOKEN }}
           # openshift_username:
           # openshift_password:
